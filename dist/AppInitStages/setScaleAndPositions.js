@@ -19,11 +19,7 @@ export function setScaleAndPositions() {
     assetScaler({ x: 0.1, y: 0.1 }, handleShadow, { width: background.width, height: background.height });
     handleShadow.position.set(window.innerWidth / 2, window.innerHeight / 2);
     handleShadow.anchor = 0.5;
-    let diviations = [
-        [window.innerWidth / 2, 0.4],
-        [0.8, 0.4], [0.6, 0.4], [0.7, 0.4]
-    ];
-    for (let i = 0; i < diviations.length; i++) {
+    for (let i = 0; i < 4; i++) {
         let blink = blinkContainer[i];
         if (gameVariables.currentState != "win") {
             doorOpen.alpha = 0;

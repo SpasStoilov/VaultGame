@@ -36,7 +36,7 @@ export function setScaleAndPositions():void{
         {width:background.width, height:background.height}
     )
     doorOpen.position.set(
-        door.x + (door.width/2)-60,
+        door.x + (door.width/2) - 60,
         door.y
     )
     doorOpen.anchor.set(0, 0.5)
@@ -63,11 +63,8 @@ export function setScaleAndPositions():void{
     )
     handleShadow.anchor = 0.5
 
-    let diviations = [
-        [window.innerWidth/2, 0.4], 
-        [0.8, 0.4], [0.6, 0.4], [0.7, 0.4]]
+    for (let i=0; i < 4; i++){
 
-    for (let i =0; i <diviations.length; i++){
         let blink =  blinkContainer[i]
 
         if (gameVariables.currentState != "win"){

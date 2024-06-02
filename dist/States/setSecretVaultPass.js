@@ -11,7 +11,6 @@ export function setSecretVaultPass() {
     }).join("");
     assets.enterPassButton.visible = true;
     gameVariables.tryComb = false;
-    gameVariables.tryComb = false;
     gameVariables.userCombination = "";
     console.log("Secret Pass:", gameVariables.secretVaultComb);
 }

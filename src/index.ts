@@ -2,7 +2,6 @@ import { resetLibGlobalScopeVariables } from './Utils/global.vars.js';
 import { assetScaler } from './Utils/background.scalar.js';
 import { positionBinding } from './Utils/position.binding.js';
 import { Application, Assets, Sprite, Texture, TextureSourceLike } from "../node_modules/pixi.js/dist/pixi.mjs"
-import { gsap } from "../node_modules/gsap/gsap-core.js";
 
 
 // Screen states:
@@ -39,84 +38,10 @@ export let userCombination:string = ""
 export let tryComb:boolean = false
 export let currentState:string = ""
 
+export function setCurrentState(state:string){
+    currentState = state
+}
 // Animations:
-async function openVaultDoor():Promise<any>{
-    currentState = "win"
-    gsap.to(
-        [assets.door, assets.handle, assets.handleShadow], 
-        {
-            duration:0.3,
-            alpha: 0
-        }
-    )
-    return gsap.to(
-            assets.doorOpen, 
-            {
-                alpha: 1,
-                delay:0.03   
-            }
-        )
-}
-async function closeVaultDoor():Promise<any>{
-    gsap.to(
-        assets.doorOpen, 
-        {
-            alpha: 0,
-            duration:0.03   
-        }
-    )
-
-    return gsap.to(
-        [assets.door, assets.handle, assets.handleShadow], 
-        {
-            delay:0.03,
-            alpha: 1
-        }
-    )
-}
-async function shiningGold():Promise<void>{
-   
-    for (let blink of assets.blinkContainer){
-        await gsap.to(
-            blink, 
-            {
-                duration:0.5,
-                alpha: 1
-            }
-        )
-        await gsap.to(
-            blink, 
-            {
-                duration:0.5,
-                alpha: 0
-            }
-        )
-    }
-}
-async function resetHandleAnimation():Promise<void>{
-    currentState = "reset-hand-animation"
-    for (let _ of Array.from({ length: 6 }, (_, i) => i)){
-        const rotationSign = ["+=", "-="][Math.floor(Math.random()*2)]
-        const offsetValue =  Array.from({ length: 10 }, (_, i) => i*i)[Math.floor(Math.random()*10)]
-        await rotationAnimation(rotationSign, offsetValue)
-    }
-}
-async function rotationAnimation(rotationSign:string, offsetValue:number=1):Promise<any>{
-    currentState = "rotation-animation"
-    gsap.to(
-        assets.handle, 
-        {
-            rotation: rotationSign + offsetValue*60* (Math.PI / 180)
-        }
-    )
-    return gsap.to(
-            assets.handleShadow, 
-            {
-                rotation: rotationSign + offsetValue*60 * (Math.PI / 180),
-                delay:0.03   
-            }
-        )
-}
 
 //States
 function setSecretVaultPass(){

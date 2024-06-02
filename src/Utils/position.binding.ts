@@ -1,7 +1,7 @@
 import{
     currentWindowHeight,
     currentWindowWidth,
-}from "../Utils/app.resize.js"
+}from "./app.resize.js"
 
 /**
  * Keep assets position difrence same.

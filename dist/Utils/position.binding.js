@@ -1,4 +1,4 @@
-import { currentWindowHeight, currentWindowWidth, } from "../index.js";
+import { currentWindowHeight, currentWindowWidth, } from "./app.resize.js";
 /**
  * Keep assets position difrence same.
  * @param {object} values { bind: <number in %> }

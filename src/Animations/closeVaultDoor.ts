@@ -6,14 +6,14 @@ export async function closeVaultDoor():Promise<any>{
         assets.doorOpen, 
         {
             alpha: 0,
-            duration:0.03   
+            duration: 0.03   
         }
     )
 
     return gsap.to(
         [assets.door, assets.handle, assets.handleShadow], 
         {
-            delay:0.03,
+            delay: 0.03,
             alpha: 1
         }
     )

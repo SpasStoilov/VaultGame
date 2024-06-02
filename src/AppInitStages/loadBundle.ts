@@ -1,6 +1,6 @@
 import {Assets} from "../../node_modules/pixi.js/dist/pixi.mjs"
 
-export async function loadBundel():Promise<any>{
+export async function loadBundle():Promise<any>{
     Assets.addBundle(
         'allAssets', {
             background:"./assets/bg.png",

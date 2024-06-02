@@ -1,8 +1,8 @@
 import { 
     currentWindowHeight,
     currentWindowWidth,
-} from "../Utils/app.resize.js"
-import {assetScalerRecord} from "./global.vars.js"
+    assetScalerRecord
+} from "./app.resize.js"
 
 /**
  * @param {number} scaleOffestValues 

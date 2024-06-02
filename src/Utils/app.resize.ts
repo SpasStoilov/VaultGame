@@ -1,4 +1,4 @@
-import { setScaleAndPositions } from "../AppInitStages/setScaleAndPositions";
+import { setScaleAndPositions } from "../AppInitStages/setScaleAndPositions.js";
 
 // Screen states:
 export let initialWindowWidth:number = window.innerWidth;
@@ -13,6 +13,7 @@ export let totalWindowWidthChange:number = 0;
 export let totalWindowHeightChange:number = 0;
 export let worldRation:number = window.innerWidth / window.innerHeight
 export let worldArea:number = window.innerWidth * window.innerHeight
+export let assetScalerRecord:{[key:string]:any} = {}
 
 /**
  * Aplication resizer

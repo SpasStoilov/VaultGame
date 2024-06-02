@@ -1,7 +1,7 @@
 import { assets } from "../index.js"
 import { gsap } from "../../node_modules/gsap/gsap-core.js";
 
-async function shiningGold():Promise<void>{
+export async function shiningGold():Promise<void>{
    
     for (let blink of assets.blinkContainer){
         await gsap.to(

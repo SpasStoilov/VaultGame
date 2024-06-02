@@ -1,7 +1,7 @@
 import { assets } from "../index.js"
 import { gsap } from "../../node_modules/gsap/gsap-core.js";
 
-async function closeVaultDoor():Promise<any>{
+export async function closeVaultDoor():Promise<any>{
     gsap.to(
         assets.doorOpen, 
         {

@@ -38,55 +38,11 @@ export let userCombination:string = ""
 export let tryComb:boolean = false
 export let currentState:string = ""
 
-export function setCurrentState(state:string){
-    currentState = state
-}
-// Animations:
-
-//States
-function setSecretVaultPass(){
-    currentState = "set-secret-pass"
-    const directions = [">", "<"]
-    const valuesPerRotation = Array.from({ length: 9 }, (_, i) => i+1)
-    secretVaultComb = Array.from({ length: 3 }, (_, i) => {
-        let value =  valuesPerRotation[Math.floor(Math.random()*(valuesPerRotation.length))]
-        let direction = directions[Math.floor(Math.random()*(directions.length))]
-        let part = Array.from({ length: value }, (_, i) => direction)
-        return part.join("")
-    }).join("")
-
-    assets.enterPassButton.visible = true
-    tryComb = false
-    userCombination = ""
-    console.log("Secret Pass:", secretVaultComb);
-}
-async function userEnterCombination(event: { data: any; }){
-    if (!tryComb){
-        const data = event.data;
-        const rotationSign = data.global.x > assets!.handle.x ? "+=" :"-="
-        userCombination += rotationSign == "-=" ? "<" : ">"
-        await rotationAnimation(rotationSign)
-    }
-}
-function tryCombination(){
-    assets.enterPassButton.visible = false
-    tryComb = true
-    winManager()
-}
-async function winManager(){
-    console.log("Win Manager!!!");
-
-    if (userCombination == secretVaultComb){
-        await openVaultDoor()
-        await shiningGold()
-        await closeVaultDoor()
-    }
-    await openVaultDoor()
-    await shiningGold()
-    await closeVaultDoor()
-    
-    await resetHandleAnimation()
-    setSecretVaultPass()
+export let gameVariables = {
+    secretVaultComb,
+    userCombination,
+    tryComb,
+    currentState,
 }
 
 // App init Stages:

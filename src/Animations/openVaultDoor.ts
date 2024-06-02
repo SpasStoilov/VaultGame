@@ -1,8 +1,8 @@
-import { assets, setCurrentState } from "../index.js"
+import { assets, gameVariables } from "../index.js"
 import { gsap } from "../../node_modules/gsap/gsap-core.js";
 
-async function openVaultDoor():Promise<any>{
-    setCurrentState("win")
+export async function openVaultDoor():Promise<any>{
+    gameVariables.currentState = "win"
     gsap.to(
         [assets.door, assets.handle, assets.handleShadow], 
         {

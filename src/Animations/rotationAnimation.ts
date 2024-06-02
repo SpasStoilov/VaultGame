@@ -1,8 +1,8 @@
-import { assets, currentState, setCurrentState } from "../index.js"
+import { assets, gameVariables } from "../index.js"
 import { gsap } from "../../node_modules/gsap/gsap-core.js";
 
 export async function rotationAnimation(rotationSign:string, offsetValue:number=1):Promise<any>{
-    setCurrentState("reset-hand-animation")
+    gameVariables.currentState = "reset-hand-animation"
     gsap.to(
         assets.handle, 
         {

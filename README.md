@@ -4,7 +4,7 @@ To install the required libraries, run the following command:
 
 npm i
 
-# Compilation
+# Compilation (you may skip)
 
 To compile the TypeScript code into JavaScript, use the TypeScript compiler (tsc). Run the following command:
 

@@ -54,12 +54,12 @@ export function assetScaler(
      *     b^2 = A/R 
      * 
      * We want to keep asset geometry and we want it's size to be >= to the screen:
-     *     (b')^2 = A'/R >= H^2, 
-     *     (a')^2 = A'*R >= W^2
+     *     (b')^2 = A'/R = H^2, 
+     *     (a')^2 = A'*R = W^2
      * => 
-     *     A' >= H^2*R , A' >= W^2/R
+     *       A'= H^2*R , A' = W^2/R
      *     -------------------------
-     *     |  2*A' > H^2*R + W^2/R |
+     *     |  2*A' = H^2*R + W^2/R |
      *     -------------------------
      */
     let twiseNewArea = 
